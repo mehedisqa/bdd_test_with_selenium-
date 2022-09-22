@@ -33,20 +33,18 @@ public class LoginTest {
     public void enterAnd(String arg0, String arg1) throws InterruptedException {
         loginPages.enterUser(arg0);
         loginPages.enterPassword(arg1);
-        Thread.sleep(20);
+        Thread.sleep(2000);
     }
 
     @And("click on login button")
     public void clickOnLoginButton() throws InterruptedException {
         loginPages.loginBtn();
-        Thread.sleep(20);
+        Thread.sleep(2000);
     }
 
     @Then("navigate to the home page")
     public void navigateToTheHomePage() {
-        String pageTitle = driver.getTitle();
-        Assert.assertEquals(pageTitle, pageTitle);
-        System.out.println(pageTitle);
+        loginPages.validate();
         driver.quit();
     }
 

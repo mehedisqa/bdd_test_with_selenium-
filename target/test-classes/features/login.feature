@@ -8,6 +8,6 @@ Feature: feature to test login functionality
 
     Examples:
       | username | password |
-      | ele      | 12345    |
+      | ele      | 123456    |
 
 
