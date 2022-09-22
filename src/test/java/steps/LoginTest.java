@@ -9,17 +9,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import pages.LoginPages;
 
 import java.time.Duration;
 
 public class LoginTest {
     WebDriver driver;
+    LoginPages loginPages;
     String driverPath = "//src//test//resources//drivers//chromedriver.exe";
 
     @Given("get to the login page")
     public void getToTheLoginPage() {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + driverPath);
         driver = new ChromeDriver();
+        loginPages = new LoginPages(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://example.testproject.io/web/");
         driver.manage().window().fullscreen();
@@ -27,20 +30,23 @@ public class LoginTest {
 
 
     @When("enter {string} and {string}")
-    public void enterAnd(String arg0, String arg1) {
-        driver.findElement(By.id("name")).sendKeys(arg0);
-        driver.findElement(By.id("password")).sendKeys(arg1);
+    public void enterAnd(String arg0, String arg1) throws InterruptedException {
+        loginPages.enterUser(arg0);
+        loginPages.enterPassword(arg1);
+        Thread.sleep(20);
     }
 
     @And("click on login button")
-    public void clickOnLoginButton() {
-        driver.findElement(By.id("login")).click();
+    public void clickOnLoginButton() throws InterruptedException {
+        loginPages.loginBtn();
+        Thread.sleep(20);
     }
 
     @Then("navigate to the home page")
     public void navigateToTheHomePage() {
         String pageTitle = driver.getTitle();
         Assert.assertEquals(pageTitle, pageTitle);
+        System.out.println(pageTitle);
         driver.quit();
     }
 
