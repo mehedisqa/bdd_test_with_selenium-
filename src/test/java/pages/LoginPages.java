@@ -8,7 +8,7 @@ public class LoginPages {
 
     public LoginPages(WebDriver driver) {
         this.driver = driver;
-        if (!driver.getTitle().equals("")) {
+        if (!driver.getTitle().equals("TestProject Demo")) {
             throw new IllegalStateException("This is not Login Page." +
                     "The current page is" + driver.getCurrentUrl());
         }
@@ -32,7 +32,14 @@ public class LoginPages {
     }
 
     public void validate() {
-      driver.findElement(validateBtn).isDisplayed();
+        if (driver.findElement(validateBtn).isDisplayed()) {
+            driver.findElement(validateBtn).click();
+        } else {
+            System.out.println("Something went wrong!");
+            driver.quit();
+        }
+
+
     }
 
 }
