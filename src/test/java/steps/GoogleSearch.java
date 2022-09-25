@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import pages.SearchPage;
 
 
 import java.time.Duration;
@@ -17,14 +18,14 @@ import java.time.Duration;
 public class GoogleSearch {
 
     WebDriver driver;
-    ChromeOptions options;
-
+    SearchPage searchPage;
     String driverPath = "//src//test//resources//drivers//chromedriver.exe";
 
     @Given("browser is open")
     public void browserIsOpen() {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + driverPath);
         driver = new ChromeDriver();
+        searchPage = new SearchPage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
@@ -37,19 +38,18 @@ public class GoogleSearch {
     @When("user enters a search text in the search box")
     public void userEntersASearchTextInTheSearchBox() {
 
-        driver.findElement(By.name("q")).sendKeys("Hello");
+        searchPage.entersASearchText("hello");
     }
 
     @And("hit enter")
     public void hitEnter() {
-        driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+
+        searchPage.hitEnter();
     }
 
     @Then("user is navigated to search results")
     public void userIsNavigatedToSearchResults() {
-        String title = String.valueOf(driver.getPageSource().contains("Adele - Hello - YouTube"));
-        Assert.assertEquals(title, title);
-        driver.quit();
+        searchPage.navigatedToSearchResults();
 
     }
 }

@@ -1,5 +1,5 @@
 Feature: feature to test login functionality
-
+  @smoke
   Scenario Outline: Check login with valid credentials
     Given get to the login page
     When  enter "<username>" and "<password>"
@@ -8,6 +8,6 @@ Feature: feature to test login functionality
 
     Examples:
       | username | password |
-      | ele      | 123456    |
+      | ele      | 12345    |
 
 
