@@ -18,14 +18,14 @@ public class LoginTest {
     String driverPath = "src/test/resources/drivers/chromedriver.exe";
 
 
-    @Before
+    @Before("@retest")
     public void browserSetup() {
         System.setProperty("webdriver.chrome.driver", driverPath);
         driver = new ChromeDriver();
     }
 
 
-    @After
+    @After("@retest")
     public void tearDown() {
         driver.quit();
     }

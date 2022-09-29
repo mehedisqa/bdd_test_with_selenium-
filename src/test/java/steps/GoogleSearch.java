@@ -19,14 +19,14 @@ public class GoogleSearch {
     SearchPage searchPage;
     String driverPath = "src/test/resources/drivers/chromedriver.exe";
 
-    @Before
+    @Before("@smoke")
 
     public void browserSetup() {
         System.setProperty("webdriver.chrome.driver",  driverPath);
         driver = new ChromeDriver();
     }
 
-    @After
+    @After("@smoke")
     public void tearDown() {
         driver.quit();
     }
