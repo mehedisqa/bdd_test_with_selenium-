@@ -15,10 +15,7 @@ public class LoginPages {
         //init page factory
         PageFactory.initElements(driver, this);
 
-      /*  if (!driver.getTitle().equals("TestProject Demo")) {
-            throw new IllegalStateException("This is not Login Page."
-                    + "The current page is" + driver.getCurrentUrl());
-        }*/
+
     }
 
     @FindBy(id = "name")

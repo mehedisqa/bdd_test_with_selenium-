@@ -1,14 +1,13 @@
 package steps;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.Assert;
 import pages.LoginPages;
 
 import java.time.Duration;
@@ -16,16 +15,27 @@ import java.time.Duration;
 public class LoginTest {
     WebDriver driver;
     LoginPages loginPages;
-    String driverPath = "//src//test//resources//drivers//chromedriver.exe";
+    String driverPath = "src/test/resources/drivers/chromedriver.exe";
+
+
+    @Before
+    public void browserSetup() {
+        System.setProperty("webdriver.chrome.driver", driverPath);
+        driver = new ChromeDriver();
+    }
+
+
+    @After
+    public void tearDown() {
+        driver.quit();
+    }
 
     @Given("get to the login page")
     public void getToTheLoginPage() {
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + driverPath);
-        driver = new ChromeDriver();
         loginPages = new LoginPages(driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://example.testproject.io/web/");
-        driver.manage().window().fullscreen();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().window().maximize();
     }
 
 
@@ -44,8 +54,8 @@ public class LoginTest {
 
     @Then("navigate to the home page")
     public void navigateToTheHomePage() {
+
         loginPages.validate();
-        driver.quit();
     }
 
 }

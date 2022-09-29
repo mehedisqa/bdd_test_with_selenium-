@@ -1,5 +1,5 @@
 Feature: feature to test login functionality
-  @smoke
+  @retest
   Scenario Outline: Check login with valid credentials
     Given get to the login page
     When  enter "<username>" and "<password>"

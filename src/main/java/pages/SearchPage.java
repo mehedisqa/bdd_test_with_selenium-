@@ -41,7 +41,6 @@ public class SearchPage {
     public  void  navigatedToSearchResults(){
         String title = String.valueOf(driver.getPageSource().contains("Adele - Hello - YouTube"));
         Assert.assertEquals(title, title);
-        driver.quit();
     }
 
 }

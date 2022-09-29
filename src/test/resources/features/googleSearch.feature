@@ -1,6 +1,6 @@
 Feature: features to test google search functionality
 
-  @smoke @retest
+  @smoke
   Scenario: Validate google search is working
     Given browser is open
     And   user is on search page
