@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         , plugin = {"pretty", "html:target/htmlReports/reports.html"
         , "json:target/JSONReports/reports.json"
         , "junit:target/JUnitReport/reports.xml"}
-        , tags = "@retest or @smoke"
+        , tags = "@sanity"
 )
 
 public class TestRunner { }

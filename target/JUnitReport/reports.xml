@@ -1,22 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="37.317">
-    <testcase classname="features to test google search functionality" name="Validate google search is working" time="19.19">
-        <system-out>
-            <![CDATA[Given browser is open.......................................................passed
-And user is on search page..................................................passed
-When user enters a search text in the search box............................passed
-And hit enter...............................................................passed
-Then user is navigated to search results....................................passed
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="93.359">
+    <testcase classname="Check home screen functionalities" name="check logout link" time="28.844">
+        <failure message="element not interactable&#10;  (Session info: chrome=106.0.5249.103)&#10;Build info: version: '4.5.0', revision: 'fe167b119a'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [18232add4e09739b575dcbc77ab3f544, sendKeysToElement {id=d3526e58-ac2e-4276-927a-d1fdf3b54756, value=[Ljava.lang.CharSequence;@7d44a19}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.103, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\HP\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:3663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:3663/devtool..., se:cdpVersion: 106.0.5249.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on WINDOWS (18232add4e09739b575dcbc77ab3f544)] -&gt; css selector: div[class='oxd-form-actions orangehrm-login-action']]&#10;Session ID: 18232add4e09739b575dcbc77ab3f544" type="org.openqa.selenium.ElementNotInteractableException">
+            <![CDATA[Given user in the login screen..............................................passed
+When user enters username and password......................................passed
+And clicks on login button..................................................failed
+Then user is navigated to the home screen...................................skipped
+When user click on welcome link.............................................skipped
+Then logout option is visible...............................................skipped
+
+StackTrace:
+org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=106.0.5249.103)
+Build info: version: '4.5.0', revision: 'fe167b119a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [18232add4e09739b575dcbc77ab3f544, sendKeysToElement {id=d3526e58-ac2e-4276-927a-d1fdf3b54756, value=[Ljava.lang.CharSequence;@7d44a19}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.103, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\HP\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:3663}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:3663/devtool..., se:cdpVersion: 106.0.5249.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (18232add4e09739b575dcbc77ab3f544)] -> css selector: div[class='oxd-form-actions orangehrm-login-action']]
+Session ID: 18232add4e09739b575dcbc77ab3f544
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:113)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.sendKeys(Unknown Source)
+	at pages.BackgroundPage.pressBtn(BackgroundPage.java:47)
+	at steps.Backg.clicksOnLoginButton(Backg.java:57)
+	at ✽.clicks on login button(file:///C:/Users/HP/eclipse-workspace/bddTest/src/test/resources/features/bg.feature:7)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
-    <testcase classname="feature to test login functionality" name="Check login with valid credentials" time="17.913">
-        <system-out>
-            <![CDATA[Given get to the login page.................................................passed
-When enter "ele" and "12345"................................................passed
-And click on login button...................................................passed
-Then navigate to the home page..............................................passed
+    <testcase classname="Check home screen functionalities" name="check the quick launch toolbar is present" time="64.357">
+        <failure message="element not interactable&#10;  (Session info: chrome=106.0.5249.103)&#10;Build info: version: '4.5.0', revision: 'fe167b119a'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [423591f1e8cb80fff876b844fd2c1d1e, sendKeysToElement {id=f1d42c87-3068-4a4c-9439-5bbe0f2076ad, value=[Ljava.lang.CharSequence;@48976e6d}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.103, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\HP\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:3859}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:3859/devtool..., se:cdpVersion: 106.0.5249.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on WINDOWS (423591f1e8cb80fff876b844fd2c1d1e)] -&gt; css selector: div[class='oxd-form-actions orangehrm-login-action']]&#10;Session ID: 423591f1e8cb80fff876b844fd2c1d1e" type="org.openqa.selenium.ElementNotInteractableException">
+            <![CDATA[Given user in the login screen..............................................passed
+When user enters username and password......................................passed
+And clicks on login button..................................................failed
+Then user is navigated to the home screen...................................skipped
+When user click on dashboard screen.........................................skipped
+
+StackTrace:
+org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=106.0.5249.103)
+Build info: version: '4.5.0', revision: 'fe167b119a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [423591f1e8cb80fff876b844fd2c1d1e, sendKeysToElement {id=f1d42c87-3068-4a4c-9439-5bbe0f2076ad, value=[Ljava.lang.CharSequence;@48976e6d}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.103, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\HP\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:3859}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:3859/devtool..., se:cdpVersion: 106.0.5249.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (423591f1e8cb80fff876b844fd2c1d1e)] -> css selector: div[class='oxd-form-actions orangehrm-login-action']]
+Session ID: 423591f1e8cb80fff876b844fd2c1d1e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:113)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy24.sendKeys(Unknown Source)
+	at pages.BackgroundPage.pressBtn(BackgroundPage.java:47)
+	at steps.Backg.clicksOnLoginButton(Backg.java:57)
+	at ✽.clicks on login button(file:///C:/Users/HP/eclipse-workspace/bddTest/src/test/resources/features/bg.feature:7)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
 </testsuite>
