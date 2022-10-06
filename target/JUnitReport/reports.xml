@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="65.783">
-    <testcase classname="Check home screen functionalities" name="check logout link" time="22.303">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="113.373">
+    <testcase classname="Check home screen functionalities" name="check logout link" time="89.339">
         <system-out>
             <![CDATA[Given user in the login screen..............................................passed
 When user enters username and password......................................passed
@@ -11,7 +11,7 @@ Then logout option is visible...............................................pass
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Check home screen functionalities" name="check the quick launch toolbar is present" time="43.249">
+    <testcase classname="Check home screen functionalities" name="check the quick launch toolbar is present" time="23.81">
         <system-out>
             <![CDATA[Given user in the login screen..............................................passed
 When user enters username and password......................................passed
