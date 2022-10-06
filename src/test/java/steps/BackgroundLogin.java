@@ -22,7 +22,7 @@ public class BackgroundLogin {
     String driverPath = "src/test/resources/drivers/chromedriver.exe";
 
     @Before("@sanity")
-    public void browserSetup(Scenario sc) {
+    public void browserSetup() {
         System.setProperty("webdriver.chrome.driver", driverPath);
         driver = new ChromeDriver();
         driver.manage().window().maximize();

@@ -44,7 +44,7 @@ public class BackgroundPage {
     }
 
     public void pressBtn() {
-        btn.sendKeys(Keys.ENTER);
+        btn.click();
     }
 
     public void getTitle() {
